@@ -18,3 +18,13 @@ Compile with`g++` using:
 ```bash
 g++ -std=c++17 -O3 -msse4.1 src/main.cpp src/image.cpp -o simd_filters `pkg-config --cflags --libs opencv4`
 ```
+## Performance Metrics
+
+```bash
+scalarBlur time: 50.9751 ms
+scalarSharpen time: 18.089 ms
+scalarEdgeDetection time: 24.2084 ms
+simdBlur time: 6.7918 ms
+simdSharpen time: 2.9173 ms
+simdEdgeDetection time: 4.3886 ms
+```
