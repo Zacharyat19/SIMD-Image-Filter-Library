@@ -14,20 +14,20 @@ cv::Mat Image::scalarBlur()
 {
     cv::Mat output = image.clone();
 
-    for (int y = 2; y < image.rows - 2; ++y) 
+    for (int y = 1; y < image.rows - 1; ++y) 
     {
-        for (int x = 2; x < image.cols - 2; ++x) 
+        for (int x = 1; x < image.cols - 1; ++x) 
         {
             int sum = 0;
 
-            for (int ky = -2; ky <= 2; ++ky) 
+            for (int ky = -1; ky <= 1; ++ky) 
             {
-                for (int kx = -2; kx <= 2; ++kx) 
+                for (int kx = -1; kx <= 1; ++kx) 
                 {
                     sum += image.at<uchar>(y + ky, x + kx);
                 }
             }
-            output.at<uchar>(y, x) = static_cast<uchar>(sum / 25);
+            output.at<uchar>(y, x) = static_cast<uchar>(sum / 9);
         }
     }
 
